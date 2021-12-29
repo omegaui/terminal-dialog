@@ -6,11 +6,16 @@
 -false
 >Language Tag
 -0
->Opened Editors on Main Tab Panel
--project-root$/src/omega/terminaldialog/TerminalDialogPlugin.java
--project-root$/src/omega/terminaldialog/TerminalDialog.java
 >Project Classpath : Required Jars
 -/home/ubuntu/Documents/Omega IDE/lib/flatlaf-0.46.jar
+-/home/ubuntu/Documents/Omega IDE/lib/annotations.jar
+-/home/ubuntu/Documents/Omega IDE/lib/guava-14.0.1.jar
+-/home/ubuntu/Documents/Omega IDE/lib/jediterm-pty-2.2.jar
+-/home/ubuntu/Documents/Omega IDE/lib/jna-platform.jar
+-/home/ubuntu/Documents/Omega IDE/lib/jna.jar
+-/home/ubuntu/Documents/Omega IDE/lib/log4j-1.2.14.jar
+-/home/ubuntu/Documents/Omega IDE/lib/pty4j-0.7.2.jar
+-/home/ubuntu/Documents/Omega IDE/lib/purejavacomm-0.0.17.jar
 >Project Classpath : Required Resource Roots
 -/home/ubuntu/Documents/Omega IDE/res
 -/home/ubuntu/Documents/Omega IDE/bin
