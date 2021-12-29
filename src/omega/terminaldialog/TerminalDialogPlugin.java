@@ -1,36 +1,46 @@
 package omega.terminaldialog;
-import omega.utils.IconManager;
+import omega.io.IconManager;
+
+import omega.plugin.PluginCategory;
+import omega.plugin.Plugin;
+
+import omega.ui.popup.OPopupItem;
 
 import omega.Screen;
 
-import omega.plugin.Plugin;
-import omega.plugin.PluginCategory;
-
 import java.net.URL;
-
-import omega.popup.OPopupItem;
 public class TerminalDialogPlugin implements Plugin{
-
-	private TerminalDialog terminalDialog;
-	private OPopupItem item;
+	
+	private OPopupItem integratedItem;
+	private OPopupItem jettermItem;
 	
 	@Override
 	public boolean enable() {
-		Screen.getScreen().getToolMenu().toolsPopup.addItem(item);
+		Screen.getScreen().getToolMenu().toolsPopup.addItem(integratedItem);
+		Screen.getScreen().getToolMenu().toolsPopup.addItem(jettermItem);
 		return true;
 	}
 	
 	@Override
 	public boolean disable() {
-		Screen.getScreen().getToolMenu().toolsPopup.removeItem("Terminal Window");
+		Screen.getScreen().getToolMenu().toolsPopup.removeItem("Integrated Terminal");
+		Screen.getScreen().getToolMenu().toolsPopup.removeItem("Full-Fledge Terminal");
 		return true;
 	}
 	
 	@Override
 	public boolean init() {
-		terminalDialog = new TerminalDialog(Screen.getScreen());
-		item = new OPopupItem(Screen.getScreen().getToolMenu().toolsPopup, "Terminal Window", IconManager.fluentconsoleImage, ()->terminalDialog.setVisible(true));
+		integratedItem = new OPopupItem(Screen.getScreen().getToolMenu().toolsPopup, "Integrated Terminal", IconManager.fluentconsoleImage, ()->showIntegratedTerminal());
+		jettermItem = new OPopupItem(Screen.getScreen().getToolMenu().toolsPopup, "Full-Fledge Terminal", IconManager.fluentconsoleImage, ()->showJetTerminal());
 		return true;
+	}
+
+	public void showIntegratedTerminal(){
+		new TerminalDialog(Screen.getScreen(), TerminalDialog.INTEGRATED_TERMINAL).setVisible(true);
+	}
+
+	public void showJetTerminal(){
+		new TerminalDialog(Screen.getScreen(), TerminalDialog.JET_TERMINAL).setVisible(true);
 	}
 	
 	@Override
@@ -51,7 +61,7 @@ public class TerminalDialogPlugin implements Plugin{
 	
 	@Override
 	public String getVersion() {
-		return "v2.0";
+		return "v2.2";
 	}
 	
 	@Override

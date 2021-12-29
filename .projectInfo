@@ -1,12 +1,16 @@
 >JDK Path
--/usr/lib/jvm/jdk-16
+-/usr/lib/jvm/jdk-17
 >Main Class
 -omega.IDE
 >Non-Java Project
 -false
+>Language Tag
+-0
 >Opened Editors on Main Tab Panel
 -project-root$/src/omega/terminaldialog/TerminalDialogPlugin.java
+-project-root$/src/omega/terminaldialog/TerminalDialog.java
 >Project Classpath : Required Jars
 -/home/ubuntu/Documents/Omega IDE/lib/flatlaf-0.46.jar
 >Project Classpath : Required Resource Roots
 -/home/ubuntu/Documents/Omega IDE/res
+-/home/ubuntu/Documents/Omega IDE/bin
